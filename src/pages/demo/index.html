@@ -6,7 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>哈哈哈哈哈哈哈</title>
 </head>
+<script>
+    function handleSendMessage() {
+    request({
+      url: '/api/getSomethings'
+    }).then((res)=>{
+        console.log(res)
+    }).catch((err) => {
+        console.log(err)
+    })
+}
+</script>
 <body>
-    
+    <button onclick="handleSendMessage()">发送请求</button>
 </body>
 </html>
