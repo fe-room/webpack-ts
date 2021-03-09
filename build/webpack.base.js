@@ -1,6 +1,6 @@
 const path = require("path");
 const HtmlWepackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const fs = require("fs");
 
@@ -86,7 +86,10 @@ const baseConfig = {
     },
     //自动解析拓展
     extensions:['.ts','.js', '.vue', '.less'] 
-  }
+  },
+  plugins: [
+      ...htmlPlugin
+  ]
 };
 
 // 根据环境变量 配置是否单独抽取CSS
